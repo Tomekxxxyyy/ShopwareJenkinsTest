@@ -9,7 +9,7 @@ pipeline {
         DATE = '$(date -d @$CURRENT_BUILD +$FORMAT)'
     }
     stages {
-        stage('PrepareEnv') {
+        stage('Backup') {
             steps {
                 sshagent (credentials: ['vagrant']) {
                     sh "ssh vagrant@192.168.33.10 cp -R $YOUNGEST_FOLDER $DEPLOYMENT_PATH/$DATE"
@@ -23,6 +23,7 @@ pipeline {
         }
         stage('SymLink') {
             steps {
+            echo 'SymLink'
                 //sh 'ssh ln -sfn $DEPLOYMENT_PATH/$DATE $SYMLINK_PATH'
             }
         }
