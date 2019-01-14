@@ -1,3 +1,5 @@
+xxxxxxx
+
 Important:
 Shopware is licensed under a dual license. To check which license / edition of Shopware you have installed, please open the "About shopware" dialog in the backend.
 The following terms are important regarding the Shopware Community Edition, licensed under AGPL V3:
