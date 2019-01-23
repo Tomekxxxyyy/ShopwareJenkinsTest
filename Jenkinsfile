@@ -45,7 +45,7 @@ pipeline {
         }
         stage('Rm') {
             steps {
-                sh 'ssh $(vagrant@192.168.33.10 ls -t | tail -n +4 | xargs rm -f)'
+                   echo 'Rm'
             }
         }
     }
