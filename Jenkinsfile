@@ -11,6 +11,12 @@ pipeline {
     stages {
         stage('Backup') {
             steps {
+                sh 'chmod + x build/backups.sh'
+                sh 'chmod + x build/deploy.sh'
+            }
+        }
+        stage('Backup') {
+            steps {
                 sshagent (credentials: ['vagrant']) {
                    sh 'build/backup.sh'
                 }
