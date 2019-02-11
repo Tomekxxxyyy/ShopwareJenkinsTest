@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('permissions') {
             steps {
-                sh 'chmod + x build/backups.sh'
+                sh 'chmod + x build/backup.sh'
                 sh 'chmod + x build/deploy.sh'
             }
         }
