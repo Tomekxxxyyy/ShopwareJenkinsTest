@@ -9,13 +9,13 @@ pipeline {
         CONNECTION = 'vagrant@192.168.33.10'
     }
     stages {
-        stage('Backup') {
+        stage('permissions') {
             steps {
                 sh 'chmod + x build/backups.sh'
                 sh 'chmod + x build/deploy.sh'
             }
         }
-        stage('Backup') {
+        stage('backup') {
             steps {
                 sshagent (credentials: ['vagrant']) {
                    sh 'build/backup.sh'
