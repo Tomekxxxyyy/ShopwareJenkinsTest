@@ -13,12 +13,27 @@ pipeline {
             steps {
                 sh 'chmod +x build/backup.sh'
                 sh 'chmod +x build/deploy.sh'
+                sh 'chmod +x build/clearcache.sh'
             }
         }
         stage('backup') {
             steps {
                 sshagent (credentials: ['vagrant']) {
                    sh 'build/backup.sh'
+                }
+            }
+        }
+        stage('backup') {
+            steps {
+                sshagent (credentials: ['vagrant']) {
+                   sh 'build/deploy.sh'
+                }
+            }
+        }
+        stage('clearcache') {
+            steps {
+                sshagent (credentials: ['vagrant']) {
+                   sh 'build/clearcache.sh'
                 }
             }
         }
