@@ -23,7 +23,7 @@ pipeline {
                 }
             }
         }
-        stage('backup') {
+        stage('deploy') {
             steps {
                 sshagent (credentials: ['vagrant']) {
                    sh 'build/deploy.sh'
