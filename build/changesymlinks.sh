@@ -1,0 +1,5 @@
+#!/bin/bash
+
+BUILD_TIME=$(($CURRENT_BUILD / 1000))
+
+ssh $CONNECTION "cd $DEPLOYMENT_PATH; ls -l"

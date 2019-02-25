@@ -37,5 +37,12 @@ pipeline {
                 }
             }
         }
+        stage('changesymlinks') {
+            steps {
+                sshagent (credentials: ['vagrant']) {
+                   sh 'build/changesymlinks.sh'
+                }
+            }
+        }
     }
 }
