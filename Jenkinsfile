@@ -41,7 +41,7 @@ pipeline {
         stage('changepermissions') {
             steps {
                 sshagent (credentials: ['vagrant']) {
-                   sh 'build/changesymlinks.sh'
+                   sh 'build/changepermissions.sh'
                 }
             }
          }
