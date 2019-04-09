@@ -16,6 +16,7 @@ pipeline {
                 sh 'chmod +x build/clearcache.sh'
                 sh 'chmod +x build/changepermissions.sh'
                 sh 'chmod +x build/changesymlinks.sh'
+                sh 'chmod +x build/deletereleases.sh'
             }
         }
         stage('backup') {
