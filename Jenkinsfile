@@ -14,6 +14,7 @@ pipeline {
                 sh 'chmod +x build/backup.sh'
                 sh 'chmod +x build/deploy.sh'
                 sh 'chmod +x build/clearcache.sh'
+                sh 'chmod +x build/changepermissions.sh'
                 sh 'chmod +x build/changesymlinks.sh'
             }
         }
