@@ -38,6 +38,13 @@ pipeline {
                 }
             }
         }
+        stage('changepermissions') {
+                    steps {
+                        sshagent (credentials: ['vagrant']) {
+                           sh 'build/changesymlinks.sh'
+                        }
+                    }
+         }
         stage('changesymlinks') {
             steps {
                 sshagent (credentials: ['vagrant']) {
