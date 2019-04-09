@@ -53,5 +53,12 @@ pipeline {
                 }
             }
         }
+        stage('deletereleases') {
+            steps {
+                sshagent (credentials: ['vagrant']) {
+                   sh 'build/deletereleases.sh'
+                }
+            }
+        }
     }
 }
